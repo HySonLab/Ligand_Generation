@@ -29,7 +29,9 @@ python3 train_binding_affinity.py --data {data_name} --fold_idx {fold_idx}
 data_name is in {kiba, davis} and fold_idx should be in {0,1,2,3,4}.
 
 ### Training Ligand Generation
-First, we provide a checkpoint for pre-trained unconditional VAEs, which is stored in folder **checkpoints**. You need to unzip the compressed file.
+We provide a checkpoint for pre-trained unconditional VAEs. You can download it from [here](https://drive.google.com/file/d/1NWtaokYSxmYvt7u2UbdiHfGlD4DeRxVQ/view?usp=sharing). 
+
+Then, the downloaded file should be placed in the same directory as the train_vae.py file.
 
 You can run:
 ```
