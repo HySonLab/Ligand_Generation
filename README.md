@@ -3,6 +3,44 @@
 Contributors:
 * Nhat Khang Ngo
 * Truong Son Hy (Correspondent / PI)
+  
+### Data Preprocessing
+Three-dimensional structures of proteins are stored in two compressed files, prot_3d_for_Davis.tar.gz, and prot_3d_for_kiba.tar.gz.
+You should move to the folder **data**, and run these commands:
+```
+cd davis
+tar –xvzf prot_3d_for_Davis.tar.gz
+```
+and 
+```
+cd kiba
+tar -xvzf prot_3d_for_kiba.tar.gz
+```
+Then, you can run:
+```
+python3 process_protein_3d.py --data {data_name} --device cuda:0
+```
+here, data_name is in {kiba, davis}.
+### Training Binding Affinity Prediction 
+You can run:
+```
+python3 train_binding_affinity.py --data {data_name} --fold_idx {fold_idx}
+```
+data_name is in {kiba, davis} and fold_idx should be in {0,1,2,3,4}.
+
+### Training Ligand Generation
+First, we provide a checkpoint for pre-trained unconditional VAEs, which is stored in folder **checkpoints**. You need to unzip the compressed file.
+
+You can run:
+```
+python3 train_vae.py
+```
+### Sampling and Evaluation
+You can run:
+```
+python3 generate_ligand.py --num_mols 100
+```
+
 
 ### References
 ```bibtex
