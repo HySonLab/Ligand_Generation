@@ -57,11 +57,10 @@ loader = DataLoader(train_dataset, batch_size=256, shuffle=True,
                     num_workers=1, collate_fn=VAECollate(False))
 
 
-# vae = ThreeD_Conditional_VAE(max_len=72, vocab_len=108, latent_dim=1024, embedding_dim=128, condition_dim=128, checkpoint_path="vae.pt", freeze=True)
-# trainer = pl.Trainer(accelerator="gpu", devices=1, max_epochs=30, logger=pl.loggers.CSVLogger('logs'),
-#                      enable_checkpointing=False)
+vae = ThreeD_Conditional_VAE(max_len=72, vocab_len=108, latent_dim=1024, embedding_dim=128, condition_dim=128, checkpoint_path="vae.pt", freeze=True)
+trainer = pl.Trainer(accelerator="gpu", devices=1, max_epochs=30, logger=pl.loggers.CSVLogger('logs'), enable_checkpointing=False)
 
-# print('Training..')
-# trainer.fit(vae, loader)
+print('Training..')
+trainer.fit(vae, loader)
 print('Saving..')
 torch.save(vae.state_dict(), f"{args.chkpt_path}/conditional_vae.pt")
