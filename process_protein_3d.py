@@ -18,7 +18,7 @@ args = parser.parse_args()
 transform = BaseTransform(device = args.device)
 
 if args.data == "davis":
-    root = "/data/davis/pdb_file/prot_3d_for_Davis"
+    root = "/data/davis/prot_3d_for_Davis"
 else:
     root = "/data/kiba/prot_3d_for_KIBA"
 
