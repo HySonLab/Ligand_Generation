@@ -40,11 +40,18 @@ You can run:
 ```
 python3 train_vae.py
 ```
-### Sampling and Evaluation
+### Sampling and Evaluation with proteins in the test set.
 You can run:
 ```
 python3 generate_ligand.py --num_mols 100
 ```
+
+### Generating ligands with specific pdb file:
+A pdb file should be stored in the /data directory. Then, you can run:
+```
+python3 generate_specific_target.py --protein_name [target name]
+```
+with the PDB file has the format as {target_name}.pdb.
 
 ### Please cite our paper with the following bibtex!
 ```bibtex
