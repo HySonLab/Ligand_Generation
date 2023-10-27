@@ -55,6 +55,8 @@ python3 generate_specific_target.py --protein_name [target name]
 ```
 with the PDB file has the format as {target_name}.pdb.
 
+![Ligands](Ligands.png)
+
 ### Please cite our paper with the following bibtex!
 ```bibtex
 @article {Ngo2023.08.10.552868,
