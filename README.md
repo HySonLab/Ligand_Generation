@@ -1,5 +1,7 @@
 # Target-aware Variational Auto-encoders for Ligand Generation with Multimodal Protein Representation Learning
 
+![PMN](PMN.png)
+
 Paper:
 https://doi.org/10.1101/2023.08.10.552868
 
